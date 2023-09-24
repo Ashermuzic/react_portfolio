@@ -227,16 +227,30 @@ body.dark-theme {
 
 .default {
   position: absolute;
-  top: 42rem;
-  right: 3rem;
+  top: 44rem;
+  right: 4rem;
   transition: all 0.4s;
+
+  i {
+    font-size: 18px;
+    padding: 7px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px hsla(208, 24%, 35%, 0.24);
+  }
 }
 .show-scroll {
   position: absolute;
-  top: 35rem;
-  right: 3rem;
+  top: 38rem;
+  right: 4rem;
   color: var(--text-color);
   cursor: pointer;
+
+  i {
+    font-size: 18px;
+    padding: 7px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px hsla(208, 24%, 35%, 0.24);
+  }
 }
 
 .nav {

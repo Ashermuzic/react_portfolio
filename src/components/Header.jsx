@@ -3,6 +3,15 @@ import React, { useEffect, useState } from "react";
 function Header() {
   const [isMenuShown, setIsMenuShown] = useState(false);
   const [isScrollUpVisible, setIsScrollUpVisible] = useState(false);
+  const [isHeaderBackground, setIsHeaderBackground] = useState(false);
+
+  const scrollHeader = () => {
+    if (window.scrollY >= 50) {
+      setIsHeaderBackground(true);
+    } else {
+      setIsHeaderBackground(false);
+    }
+  };
 
   const scrollUp = () => {
     if (window.scrollY >= 50) {
@@ -13,10 +22,12 @@ function Header() {
   };
 
   useEffect(() => {
+    window.addEventListener("scroll", scrollHeader);
     window.addEventListener("scroll", scrollUp);
 
     // Clean up the event listener when the component unmounts
     return () => {
+      window.removeEventListener("scroll", scrollHeader);
       window.removeEventListener("scroll", scrollUp);
     };
   }, []);
@@ -64,7 +75,10 @@ function Header() {
 
   return (
     <div>
-      <header class="header" id="header">
+      <header
+        className={`header ${isHeaderBackground ? "bg-header" : ""}`}
+        id="header"
+      >
         <nav class="nav container">
           <a href="#home" class="nav__logo">
             Ash3r
