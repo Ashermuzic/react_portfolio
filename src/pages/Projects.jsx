@@ -65,30 +65,24 @@ function Projects() {
                     </div>
                     <div className="body">
                       <button>
-                        <div
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                          }}
-                        >
+                        <div>
                           Github{" "}
                           <i
                             className="icon icon-github"
-                            style={{ fontSize: "20px", marginLeft: "5px" }}
+                            style={{ fontSize: "18px" }}
                           ></i>
                         </div>
                       </button>
 
                       <a href={data.webLink} target="_blank">
-                        <button
-                          style={{ padding: "10px 15px" }}
-                          className="demoArrow"
-                        >
-                          Live Demo{" "}
-                          <i
-                            className="icon icon-arrow-right"
-                            style={{ fontWeight: 100 }}
-                          ></i>
+                        <button className="demoArrow">
+                          <div>
+                            Live Demo{" "}
+                            <i
+                              className="icon icon-arrow-right"
+                              style={{ fontWeight: 100 }}
+                            ></i>
+                          </div>
                         </button>
                       </a>
                     </div>

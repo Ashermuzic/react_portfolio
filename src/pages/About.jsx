@@ -4,7 +4,7 @@ function About() {
   // Function to handle the download action
   const handleDownload = () => {
     // Specify the path to your CV file
-    const cvFilePath = "../public/asher_cv.pdf"; // Update with the correct path
+    const cvFilePath = "../public/MyCv.pdf"; // Update with the correct path
 
     // Create an anchor element
     const anchor = document.createElement("a");
@@ -29,23 +29,24 @@ function About() {
             <div className="qualification__info">
               <div className="qualification__div">
                 <span className="qualification__details">
-                  I'm a highly skilled and motivated front-end developer with
-                  more than 2 years of experience in building responsive and
-                  user-friendly websites and web applications. Proficient in
-                  HTML, CSS, JavaScript, and modern front-end frameworks like
-                  React.
+                  I'm a highly skilled and motivated software developer with
+                  over 2 years of experience in crafting responsive and
+                  user-centric software solutions. My expertise spans across a
+                  wide spectrum of technologies, enabling me to deliver
+                  exceptional software products and services.
                   <br />
                   <br />
-                  I have a strong understanding of UI/UX principles and a keen
-                  eye for design aesthetics. Dedicated to delivering
-                  high-quality code and creating an exceptional user experience.
+                  I am deeply committed to delivering high-quality code and
+                  consistently striving for excellence in software development
+                  to guarantee an outstanding user experience.
                   <br />
                   <br />I possess a diverse collection of certificates that
                   highlight my expertise in various areas. These certifications
                   reflect my commitment to continuous learning and staying
-                  updated with industry trends. From front-end web development
-                  to user experience design, project management, and agile
-                  methodologies, I bring a versatile skill set to the table.
+                  updated with industry trends. From software development,
+                  including user experience design, to project management and
+                  proficiency in agile methodologies, I bring a versatile skill
+                  set to the table.
                 </span>
 
                 {/* Trigger download when the button is clicked */}

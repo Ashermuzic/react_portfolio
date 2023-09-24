@@ -775,6 +775,7 @@ body.dark-theme {
         margin-top: 15px;
         .body {
           margin-top: 20px;
+          display: flex;
 
           button {
             padding: 8px 15px;
@@ -784,7 +785,33 @@ body.dark-theme {
             color: var(--text-color);
             border-radius: 5px;
             cursor: pointer;
-            transform: translateX(0.25rem); // this
+
+            div {
+              display: flex;
+              align-items: center;
+              height: 20px;
+              gap: 5px;
+
+              .icon-arrow-right {
+                transition: 0.4s;
+                animation: liner 3.5s linear infinite;
+              }
+
+              @keyframes liner {
+                0% {
+                  transform: translateX(0px);
+                }
+                3% {
+                  transform: translateX(4px);
+                }
+                6% {
+                  transform: translateX(0px);
+                }
+                9% {
+                  transform: translateX(4px);
+                }
+              }
+            }
           }
         }
       }

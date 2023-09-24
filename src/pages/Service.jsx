@@ -12,8 +12,8 @@ function Service() {
             <i className="icon icon-code-fork"></i>
 
             <h2 className="services__title">
-              UI/UX <br />
-              Designer
+              Quality-Focused <br />
+              Development
             </h2>
 
             <p className="services__description">
@@ -28,13 +28,13 @@ function Service() {
             <i className="icon icon-code"></i>
 
             <h2 className="services__title">
-              Website <br />
-              Design
+              Software <br />
+              Planning
             </h2>
 
             <p className="services__description">
               I use different tools and techniques to plan, and organize the
-              structure, content, and visual elements of a website.
+              structure, content, and visual elements of a software.
             </p>
 
             <div className="services__border"></div>
@@ -50,7 +50,8 @@ function Service() {
 
             <p className="services__description">
               Allow page elements to resize proportionally based on the user's
-              screen size.
+              screen size.Enabling Proportional Page Element Resizing for
+              Optimal Screen Adaptation
             </p>
 
             <div className="services__border"></div>
