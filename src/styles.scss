@@ -217,11 +217,26 @@ body.dark-theme {
 /*=============== HEADER & NAV ===============*/
 
 .header {
+  position: relative;
   width: 100%;
   position: fixed;
   bottom: 2rem;
   left: 0;
   z-index: var(--z-fixed);
+}
+
+.default {
+  position: absolute;
+  top: 42rem;
+  right: 3rem;
+  transition: all 0.4s;
+}
+.show-scroll {
+  position: absolute;
+  top: 35rem;
+  right: 3rem;
+  color: var(--text-color);
+  cursor: pointer;
 }
 
 .nav {

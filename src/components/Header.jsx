@@ -2,6 +2,24 @@ import React, { useEffect, useState } from "react";
 
 function Header() {
   const [isMenuShown, setIsMenuShown] = useState(false);
+  const [isScrollUpVisible, setIsScrollUpVisible] = useState(false);
+
+  const scrollUp = () => {
+    if (window.scrollY >= 50) {
+      setIsScrollUpVisible(true);
+    } else {
+      setIsScrollUpVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", scrollUp);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", scrollUp);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuShown(!isMenuShown);
@@ -59,11 +77,7 @@ function Header() {
           >
             <ul class="nav__list grid">
               <li class="nav__item">
-                <a
-                  href="#home"
-                  class="nav__link active-link"
-                  onClick={toggleMenu}
-                >
+                <a href="#home" class="nav__link" onClick={toggleMenu}>
                   <i class="icon icon-home"></i> Home
                 </a>
               </li>
@@ -120,6 +134,14 @@ function Header() {
             </div>
           </div>
         </nav>
+
+        <a
+          href="#home"
+          id="scroll-up"
+          className={`default ${isScrollUpVisible ? "show-scroll" : ""}`}
+        >
+          <i className="icon icon-arrow-up"></i>
+        </a>
       </header>
     </div>
   );
