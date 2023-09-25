@@ -1,6 +1,55 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 function Contact() {
+  const form = useRef();
+  const [successMessage, setSuccessMessage] = useState(false);
+  const [formData, setFormData] = useState({
+    user_name: "",
+    user_email: "",
+    user_project: "",
+  });
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_8fmj8ps",
+        "template_s3pp0mh",
+        form.current,
+        "i59tXTKmr2fsYF-jF"
+      )
+      .then(
+        (result) => {
+          console.log("message sent successfully");
+          setSuccessMessage(true);
+
+          // Clear input fields after sending the message
+          setFormData({
+            user_name: "",
+            user_email: "",
+            user_project: "",
+          });
+
+          setTimeout(() => {
+            setSuccessMessage(false);
+          }, 5000);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
   return (
     <div className="main">
       <section className="contact section" id="contact">
@@ -54,7 +103,7 @@ function Contact() {
               <i className="icon icon-send"></i> Write me your Project
             </h3>
 
-            <form action="" className="contact__form" id="contact-form">
+            <form ref={form} onSubmit={sendEmail} className="contact__form">
               <div className="contact__form-div">
                 <label htmlFor="contact-name" className="contact__form-tag">
                   Names
@@ -65,7 +114,8 @@ function Contact() {
                   required
                   placeholder="Write your name"
                   className="contact__form-input"
-                  id="contact-name"
+                  value={formData.user_name}
+                  onChange={handleInputChange}
                 />
               </div>
 
@@ -79,7 +129,8 @@ function Contact() {
                   required
                   placeholder="Write your email"
                   className="contact__form-input"
-                  id="contact-email"
+                  value={formData.user_email}
+                  onChange={handleInputChange}
                 />
               </div>
 
@@ -92,6 +143,8 @@ function Contact() {
                   placeholder="Write your Project"
                   id="contact-project"
                   className="contact__form-input"
+                  value={formData.user_project}
+                  onChange={handleInputChange}
                 ></textarea>
               </div>
 
@@ -99,9 +152,19 @@ function Contact() {
                 Message
               </p>
 
-              <button type="submit" className="contact__button">
-                Submit <i className="icon icon-arrow-right"></i>
-              </button>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "flex-end",
+                }}
+              >
+                <button type="submit" value="Send" className="contact__button">
+                  Submit <i className="icon icon-arrow-right"></i>
+                </button>
+                {successMessage && (
+                  <p className="successMessage">Message sent successfully !</p>
+                )}
+              </div>
             </form>
           </div>
         </div>

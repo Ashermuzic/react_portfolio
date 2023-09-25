@@ -976,6 +976,15 @@ body.dark-theme {
   transition: transform 0.3s;
 }
 
+.successMessage {
+  font-size: 13px;
+  margin-left: 30px;
+  font-weight: 200;
+  padding: 2px;
+  color: green;
+  background: rgba(0, 128, 0, 0.205);
+}
+
 .contact__button:hover i {
   transform: translateX(0.25rem);
 }
