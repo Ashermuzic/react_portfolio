@@ -11,14 +11,14 @@ function Projects() {
       id: 1,
       img: Car,
       title: "Modern Car Website",
-      gitLink: "https://github.com/Ashermuzic",
+      gitLink: "https://github.com/Ashermuzic/car",
       webLink: "https://cheery-sfogliatella-508566.netlify.app",
     },
     {
       id: 2,
       img: Blog,
       title: "Habesha Blog App",
-      gitLink: "https://github.com/Ashermuzic",
+      gitLink: "https://github.com/Ashermuzic/blog_app_Frontend",
       webLink: "https://steady-praline-683fce.netlify.app",
     },
     {
@@ -32,7 +32,7 @@ function Projects() {
       id: 4,
       img: Food,
       title: "Burger Planet",
-      gitLink: "https://github.com/Ashermuzic",
+      gitLink: "https://github.com/Ashermuzic/food",
       webLink: "https://mellow-halva-9a7427.netlify.app",
     },
 
@@ -40,7 +40,7 @@ function Projects() {
       id: 5,
       img: Recipe,
       title: "Recipe App",
-      gitLink: "https://github.com/Ashermuzic",
+      gitLink: "https://github.com/Ashermuzic/recipe",
       webLink: "https://gentle-conkies-88cf4a.netlify.app",
     },
   ];
@@ -64,15 +64,17 @@ function Projects() {
                       <h1>{data.title}</h1>
                     </div>
                     <div className="body">
-                      <button>
-                        <div>
-                          Github{" "}
-                          <i
-                            className="icon icon-github"
-                            style={{ fontSize: "18px" }}
-                          ></i>
-                        </div>
-                      </button>
+                      <a href={data.gitLink} target="_blank">
+                        <button>
+                          <div>
+                            Github{" "}
+                            <i
+                              className="icon icon-github"
+                              style={{ fontSize: "18px" }}
+                            ></i>
+                          </div>
+                        </button>
+                      </a>
 
                       <a href={data.webLink} target="_blank">
                         <button className="demoArrow">
