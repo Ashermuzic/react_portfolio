@@ -19,7 +19,8 @@ function Projects() {
       img: Blog,
       title: "Habesha Blog App",
       gitLink: "https://github.com/Ashermuzic/blog_app_Frontend",
-      webLink: "https://steady-praline-683fce.netlify.app",
+      webLink:
+        "https://65114fe7b7080372f03405db--legendary-semolina-2eb566.netlify.app/",
     },
     {
       id: 3,
